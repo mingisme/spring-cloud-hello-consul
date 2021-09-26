@@ -1,5 +1,6 @@
 package com.example.springcloudhelloconsul.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +14,17 @@ public class ConfigController {
     @Value("${useLocalCache:false}")
     private boolean useLocalCache;
 
+    @Autowired
+    private DsProperties dsProperties;
+
     @RequestMapping("/get")
     public boolean get(){
         return useLocalCache;
+    }
+
+    @RequestMapping("/ds")
+    public DsProperties ds(){
+        return dsProperties;
     }
 
 }
