@@ -17,13 +17,13 @@ public class ConfigController {
     @Autowired
     private DsProperties dsProperties;
 
-    @RequestMapping("/get")
-    public boolean get(){
+    @RequestMapping("/cache")
+    public boolean getCache(){
         return useLocalCache;
     }
 
     @RequestMapping("/ds")
-    public DsProperties ds(){
+    public DsProperties getDs(){
         return dsProperties;
     }
 

@@ -1,5 +1,11 @@
 # spring-cloud-hello-consul
 
+### start consul agent
+consul agent -dev
 
-###add kv in consul
+### open consul ui
+http://localhost:8500/ui
+
+
+### add kv in consul
 /config/consul-client-app/useLocalCache = false
